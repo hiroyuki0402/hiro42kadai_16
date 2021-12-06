@@ -16,6 +16,9 @@
 		3B53E5E4275E06BA002754C6 /* Hiro42Kadai15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E5E3275E06BA002754C6 /* Hiro42Kadai15Tests.swift */; };
 		3B53E5EE275E06BA002754C6 /* Hiro42Kadai15UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E5ED275E06BA002754C6 /* Hiro42Kadai15UITests.swift */; };
 		3B53E5F0275E06BA002754C6 /* Hiro42Kadai15UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E5EF275E06BA002754C6 /* Hiro42Kadai15UITestsLaunchTests.swift */; };
+		3B53E5FD275E0916002754C6 /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E5FC275E0916002754C6 /* AddFruitViewController.swift */; };
+		3B53E5FF275E0983002754C6 /* CheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E5FE275E0983002754C6 /* CheckItem.swift */; };
+		3B53E601275E09AA002754C6 /* FruistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53E600275E09A9002754C6 /* FruistList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		3B53E5E9275E06BA002754C6 /* Hiro42Kadai15UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hiro42Kadai15UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53E5ED275E06BA002754C6 /* Hiro42Kadai15UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiro42Kadai15UITests.swift; sourceTree = "<group>"; };
 		3B53E5EF275E06BA002754C6 /* Hiro42Kadai15UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiro42Kadai15UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B53E5FC275E0916002754C6 /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
+		3B53E5FE275E0983002754C6 /* CheckItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItem.swift; sourceTree = "<group>"; };
+		3B53E600275E09A9002754C6 /* FruistList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruistList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				3B53E5D5275E06B9002754C6 /* Assets.xcassets */,
 				3B53E5D7275E06B9002754C6 /* LaunchScreen.storyboard */,
 				3B53E5DA275E06B9002754C6 /* Info.plist */,
+				3B53E5FC275E0916002754C6 /* AddFruitViewController.swift */,
+				3B53E5FE275E0983002754C6 /* CheckItem.swift */,
+				3B53E600275E09A9002754C6 /* FruistList.swift */,
 			);
 			path = Hiro42Kadai15;
 			sourceTree = "<group>";
@@ -259,6 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B53E5D1275E06B8002754C6 /* ViewController.swift in Sources */,
+				3B53E5FD275E0916002754C6 /* AddFruitViewController.swift in Sources */,
+				3B53E601275E09AA002754C6 /* FruistList.swift in Sources */,
+				3B53E5FF275E0983002754C6 /* CheckItem.swift in Sources */,
 				3B53E5CD275E06B8002754C6 /* AppDelegate.swift in Sources */,
 				3B53E5CF275E06B8002754C6 /* SceneDelegate.swift in Sources */,
 			);
