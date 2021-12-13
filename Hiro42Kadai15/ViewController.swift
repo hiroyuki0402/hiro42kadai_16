@@ -3,13 +3,19 @@
 //  Hiro42Kadai15
 //
 import UIKit
-class ViewController: UIViewController, AddFruitViewControllerDelegate {
+class ViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     private var fruitsInStock = [CheckItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultValues()
+        Practitioner.shared.actions { [weak self] text in
+            self?.fruitsInStock.append(.init(name: text, isChecked: false))
+            self?.tableView.reloadData()
+        } back: {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     private func defaultValues() {
@@ -17,28 +23,6 @@ class ViewController: UIViewController, AddFruitViewControllerDelegate {
         fruitsInStock.append(.init(name: "みかん", isChecked: true))
         fruitsInStock.append(.init(name: "バナナ", isChecked: false))
         fruitsInStock.append(.init(name: "パイナップル", isChecked: true))
-    }
-
-    func didSave(checkItem: CheckItem) {
-        dismiss(animated: true, completion: nil)
-        fruitsInStock.append(checkItem)
-        tableView.reloadData()
-    }
-
-    func didCancel() {
-        dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction private func addButton(_ sender: Any) {
-        performSegue(withIdentifier: "Homesegue", sender: nil)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Homesegue" {
-            guard let navigationController = segue.destination as? UINavigationController else { return }
-            guard let addFruitVC = navigationController.topViewController as? AddFruitViewController else { return }
-            addFruitVC.delegate = self
-        }
     }
 }
 
@@ -57,8 +41,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         fruitsInStock[indexPath.row].isChecked.toggle()
         tableView.reloadRows(at: [indexPath], with: .fade)
     }
-
-
 }
 
 class FruitCell: UITableViewCell {
@@ -68,5 +50,18 @@ class FruitCell: UITableViewCell {
     func configure(item: CheckItem) {
         fruitsNameLabel.text = item.name
         checkImgaeView.image = item.isChecked ? UIImage(named: "checkMark") : nil
+    }
+}
+
+class Practitioner {
+    static let shared = Practitioner()
+    struct Event {
+        static var save: (String) -> Void = {_ in }
+        static var back: () -> Void = {}
+    }
+    private init() {}
+    public func actions(save: @escaping(String) -> Void, back: @escaping() -> Void) {
+        Event.save = save
+        Event.back = back
     }
 }

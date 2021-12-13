@@ -6,23 +6,15 @@
 //
 
 import UIKit
-
-protocol AddFruitViewControllerDelegate: AnyObject {
-   func didSave(checkItem: CheckItem)
-   func didCancel()
-}
-
 class AddFruitViewController: UIViewController {
    @IBOutlet private weak var enterFruitTextField: UITextField!
 
-   weak var delegate: AddFruitViewControllerDelegate?
-
    @IBAction private func executeSaveButton(_ sender: Any) {
        guard let text = enterFruitTextField.text, !text.isEmpty else { return }
-       delegate?.didSave(checkItem: .init(name: text, isChecked: false))
+       Practitioner.Event.save(text)
+       Practitioner.Event.back()
    }
-
-   @IBAction func executeCancelButton(_ sender: Any) {
-       delegate?.didCancel()
+   @IBAction private func executeCancelButton(_ sender: Any) {
+       Practitioner.Event.back()
    }
 }
