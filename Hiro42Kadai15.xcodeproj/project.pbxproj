@@ -107,13 +107,13 @@
 			children = (
 				3B53E5CC275E06B8002754C6 /* AppDelegate.swift */,
 				3B53E5CE275E06B8002754C6 /* SceneDelegate.swift */,
+				3B53E5FC275E0916002754C6 /* AddFruitViewController.swift */,
 				3B53E5D0275E06B8002754C6 /* ViewController.swift */,
+				3B53E5FE275E0983002754C6 /* CheckItem.swift */,
 				3B53E5D2275E06B8002754C6 /* Main.storyboard */,
 				3B53E5D5275E06B9002754C6 /* Assets.xcassets */,
 				3B53E5D7275E06B9002754C6 /* LaunchScreen.storyboard */,
 				3B53E5DA275E06B9002754C6 /* Info.plist */,
-				3B53E5FC275E0916002754C6 /* AddFruitViewController.swift */,
-				3B53E5FE275E0983002754C6 /* CheckItem.swift */,
 				3B53E602275E1039002754C6 /* Memo.swift */,
 			);
 			path = Hiro42Kadai15;
@@ -146,6 +146,7 @@
 				3B53E5C5275E06B8002754C6 /* Sources */,
 				3B53E5C6275E06B8002754C6 /* Frameworks */,
 				3B53E5C7275E06B8002754C6 /* Resources */,
+				3B89C7642767A44000996F25 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -261,6 +262,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B89C7642767A44000996F25 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B53E5C5275E06B8002754C6 /* Sources */ = {

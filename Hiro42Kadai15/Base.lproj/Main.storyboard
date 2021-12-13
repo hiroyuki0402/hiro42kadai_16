@@ -74,7 +74,6 @@
                     <navigationItem key="navigationItem" id="4Rk-ej-qXL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aal-3k-3Ka">
                             <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="GQh-d0-SKa"/>
                                 <segue destination="guT-84-9eR" kind="show" identifier="Homesegue" id="vIh-hh-dbb"/>
                             </connections>
                         </barButtonItem>
