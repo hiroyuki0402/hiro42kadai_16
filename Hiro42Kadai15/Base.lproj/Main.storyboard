@@ -166,7 +166,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BZS-Km-faD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guT-84-9eR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="guT-84-9eR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cG3-eh-VcM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Tn-jO-dhe">
