@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultValues()
-        Practitioner.shared.actions { [weak self] text in
+        Conductor.shared.actions { [weak self] text in
             self?.fruitsInStock.append(.init(name: text, isChecked: false))
             self?.tableView.reloadData()
         } back: {
@@ -53,8 +53,8 @@ class FruitCell: UITableViewCell {
     }
 }
 
-class Practitioner {
-    static let shared = Practitioner()
+class Conductor {
+    static let shared = Conductor()
     struct Event {
         static var save: (String) -> Void = {_ in }
         static var back: () -> Void = {}

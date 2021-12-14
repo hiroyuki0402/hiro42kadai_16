@@ -11,10 +11,10 @@ class AddFruitViewController: UIViewController {
 
    @IBAction private func executeSaveButton(_ sender: Any) {
        guard let text = enterFruitTextField.text, !text.isEmpty else { return }
-       Practitioner.Event.save(text)
-       Practitioner.Event.back()
+       Conductor.Event.save(text)
+       Conductor.Event.back()
    }
    @IBAction private func executeCancelButton(_ sender: Any) {
-       Practitioner.Event.back()
+       Conductor.Event.back()
    }
 }
