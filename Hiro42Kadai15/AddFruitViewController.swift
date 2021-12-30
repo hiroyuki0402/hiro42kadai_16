@@ -31,7 +31,4 @@ class AddFruitViewController: UIViewController {
         self.didTapSave = didTapSave
         self.didTapCancel = didTapCancel
     }
-
 }
-
-

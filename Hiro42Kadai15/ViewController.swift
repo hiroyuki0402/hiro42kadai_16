@@ -3,9 +3,6 @@
 //  Hiro42Kadai15
 //
 import UIKit
-//protocol ViewControllerDelegate: AnyObject {
-//    func edit()
-//}
 
 class ViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
@@ -90,4 +87,3 @@ class FruitCell: UITableViewCell {
         checkImgaeView.image = item.isChecked ? UIImage(named: "checkmark") : nil
     }
 }
-
