@@ -9,7 +9,6 @@ class ViewController: UIViewController {
     private var fruitsInStock = [CheckItem]()
     /// 課題16追加
     private var editTarget = 0
-    private var editMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +72,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     /// 課題16追加
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         editTarget = indexPath.row
-        editMode = true
         performSegue(withIdentifier: "edit", sender: nil)
     }
 }
