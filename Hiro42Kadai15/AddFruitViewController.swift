@@ -11,7 +11,14 @@ class AddFruitViewController: UIViewController {
 
     private var didTapCancel: () -> Void = {}
     private var didTapSave: (String) -> Void = { _ in }
+    /// 課題16追加
+    var defaultText: CheckItem?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /// 課題16追加
+        enterFruitTextField.text = defaultText?.name ?? ""
+    }
 
     @IBAction private func executeSaveButton(_ sender: Any) {
         guard let text = enterFruitTextField.text, !text.isEmpty else { return }
@@ -26,3 +33,5 @@ class AddFruitViewController: UIViewController {
     }
 
 }
+
+
