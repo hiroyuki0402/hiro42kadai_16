@@ -25,28 +25,40 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifire = segue.identifier else { return }
         guard let navigationController = segue.destination as? UINavigationController else { return }
+
+        func presentAddFruitViewController(mode: AddFruitViewController.Mode, didTapSave: @escaping (String) -> Void) {
+            guard let addFruitVc = navigationController.topViewController as? AddFruitViewController else { return }
+
+            addFruitVc.setup(
+                mode: mode,
+                didTapSave: didTapSave,
+                didTapCancel: { [weak self] in
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            )
+        }
+
         switch identifire {
         case "Homesegue":
-            guard let addFruitVc = navigationController.topViewController as? AddFruitViewController else { return }
-            addFruitVc.setup { [weak self] fruits in
-                self?.fruitsInStock.append(.init(name: fruits, isChecked: false))
-                self?.tableView.reloadData()
-                self?.dismiss(animated: true, completion: nil)
-            } didTapCancel: { [weak self] in
-                self?.dismiss(animated: true, completion: nil)
-            }
-            /// 課題16追加
+            presentAddFruitViewController(
+                mode: .create,
+                didTapSave: { [weak self] name in
+                    self?.fruitsInStock.append(.init(name: name, isChecked: false))
+                    self?.tableView.reloadData()
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            )
         case "edit":
-            guard let addFruitVc = navigationController.topViewController as? AddFruitViewController else { return }
-            addFruitVc.setup { [weak self] fruits in
-                self?.fruitsInStock[self!.editTarget].name = fruits
-                self?.tableView.reloadData()
-                self?.dismiss(animated: true, completion: nil)
-            } didTapCancel: { [weak self] in
-                self?.dismiss(animated: true, completion: nil)
-            }
-            addFruitVc.defaultText = fruitsInStock[editTarget]
-        default: break
+            presentAddFruitViewController(
+                mode: .update(name: fruitsInStock[editTarget].name),
+                didTapSave: { [weak self] name in
+                    self?.fruitsInStock[self!.editTarget].name = name
+                    self?.tableView.reloadData()
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            )
+        default:
+            break
         }
     }
 }
